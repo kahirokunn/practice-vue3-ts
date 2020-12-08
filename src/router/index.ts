@@ -1,11 +1,21 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
-import Home from "../views/Home.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Home1",
+    component: () =>
+      import(/* webpackChunkName: "home1" */ "../views/Home1.vue"),
+  },
+  {
+    path: "/home2",
+    name: "Home2",
+    component: () => import(/* webpackChunkName: "home2" */ "../views/Home2"),
+  },
+  {
+    path: "/home3",
+    name: "Home3",
+    component: () => import(/* webpackChunkName: "home3" */ "../views/Home3"),
   },
   {
     path: "/about",
